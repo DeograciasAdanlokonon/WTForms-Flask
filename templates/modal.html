@@ -1,0 +1,32 @@
+{% from 'bootstrap5/form.html' import render_form, render_field %}
+
+{% block content %}
+<!-- Modal -->
+<form method="post" novalidate class="form">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add a new cafe into the database</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- This is where our WTForm fields will go -->
+          {{ form.csrf_token() }}
+          {{ render_field(form.cafe) }}
+          {{ render_field(form.location) }}
+          {{ render_field(form.open) }}
+          {{ render_field(form.close) }}
+          {{ render_field(form.coffee) }}
+          {{ render_field(form.wifi) }}
+          {{ render_field(form.power) }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{ render_field(form.submit, class='btn btn-warning') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

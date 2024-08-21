@@ -15,5 +15,7 @@
   </head>
   <body>
     {% block content %}{% endblock %}
+    <!-- Load Bootstrap-Flask CSS here -->
+    {{bootstrap.load_js()}}
   </body>
 </html>

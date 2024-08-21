@@ -31,3 +31,7 @@ a, add_button {
    margin: 0;
    height: 100vh;
 }
+
+#staticBackdrop {
+    color: black!important;
+}
